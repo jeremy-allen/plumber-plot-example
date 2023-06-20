@@ -12,7 +12,8 @@ function() {
   diamonds |> 
     select(cut) |>
     unique() |> 
-    mutate(id = paste0("id_", str_to_lower(cut))) |> 
+    mutate(id = paste0("id_", str_to_lower(cut)),
+           id = str_replace(id, " ", "_")) |> 
     pull(id)
 }
 
@@ -25,7 +26,8 @@ function(sample_id) {
   # samples, but in this example I am loading an existing data frame
   df <- diamonds |> 
     select(cut, price) |> 
-    mutate(id = paste0("id_", str_to_lower(cut))) |> 
+    mutate(id = paste0("id_", str_to_lower(cut)),
+           id = str_replace(id, " ", "_")) |> 
     select(id, price) |> 
     filter(id == sample_id) |> 
     sample_n(200) # limiting to 200 samples for demo purposes
