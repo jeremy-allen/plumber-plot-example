@@ -18,7 +18,7 @@ function() {
 
 #* Density plot of a sample
 #* @param sample_id The id of the sample to plot, try id_premium
-#* @serializer png list(width = 450, height = 200)
+#* @serializer png list(width = 550, height = 300)
 #* @get /plot
 function(sample_id) {
   # in a real situation this would probably be a call to a database of
@@ -33,7 +33,11 @@ function(sample_id) {
    # plot the samples and save as an image
   plot <- df |> 
     ggplot(aes(x = price)) +
-    geom_density(fill = "#C51DC8", color = "#C51DC8", alpha = .6)
+    geom_density(fill = "#C51DC8", color = "#C51DC8", alpha = .6) +
+    labs(
+      title = paste0("Density of sample: ", sample_id),
+      caption = paste0("Plotted at: ", Sys.time())
+    )
   
   print(plot)
 
