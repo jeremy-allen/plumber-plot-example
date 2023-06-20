@@ -1,0 +1,14 @@
+name: test-plot-api
+title: test-plot-api
+username: jeremy.allen
+account: jeremy.allen
+server: colorado.posit.co
+hostUrl: https://colorado.posit.co/rsc/__api__
+appId: 16876
+bundleId: 76098
+url: https://colorado.posit.co/rsc/test-plot-api/
+when: 1687283987.06549
+lastSyncTime: 1687283987.06551
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .Rprofile|plot.png
